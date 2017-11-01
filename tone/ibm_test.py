@@ -1,8 +1,7 @@
 import tone_analyzer
 
 if __name__ == "__main__":
-    book = open("sorcerers_stone.txt", "r")
-    with open("sorcerers_stone.txt", "r") as book:
+    with open("harrypotter1.txt", "r") as book:
         for paragraph in book:
             results = tone_analyzer.analyze_tone(paragraph)
             if results != False:
