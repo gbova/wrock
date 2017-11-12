@@ -24,7 +24,7 @@ def display_results(data):
 # Parameters: The data returned from IBM Watson's Tone Analyzer
 # This method extracts the overall tone of the text analyzed by IBM Watson
 def extract_tone(data):
-    data = json.loads(str(data))
+    data = json.loads(data.encode("utf-8"))
     if "error" in data:
         return
 
@@ -54,3 +54,14 @@ def analyze_tone(text):
         return r.text
     except:
         return False
+
+
+# extract_characters
+# Parameters: A list of character names, a block of text
+# Returns: The list of characters names that appear in the given text
+def extract_characters(characters, text):
+    character_list = []
+    for character in characters:
+        if character in text:
+            character_list.append(character)
+    return character_list
