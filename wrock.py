@@ -39,7 +39,7 @@ def open_book(name):
         CHARACTERS = []
         for line in file:
             CHARACTERS.append(line.partition(":")[0])
-g        file.close()
+        file.close()
     except IOError:
         sys.stderr.write("Error: Characters.txt does not exist.\n")
         exit(1)
