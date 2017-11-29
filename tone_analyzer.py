@@ -51,7 +51,8 @@ def analyze_tone(text):
     data = text
     try:
         r = requests.post(WATSON, auth=(usr,pwd), headers=headers, data=data)
-        return r.text
+        tone = extract_tone(r.text)
+        return tone
     except:
         return False
 

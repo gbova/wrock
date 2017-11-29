@@ -1,5 +1,5 @@
-Harry
-Mr. Dursley
-Mrs. Dursley
-The Dursleys
-Dudley
+Harry:
+Mr. Dursley:
+Mrs. Dursley:
+The Dursleys:
+Dudley:

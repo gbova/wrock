@@ -10,22 +10,20 @@ def analyze(text, paragraph):
     global MUTEX
     global CHARACTERS
     global ANALYZED_PARAGRAPHS
-    results = tone_analyzer.analyze_tone(text)
 
-    # Collect metadata (paragraph number, overall tone, character list
-    if results != False:
-        tone = tone_analyzer.extract_tone(results)
+    tone = tone_analyzer.analyze_tone(text)
+    if tone != False:
+        print(tone)
         characters = tone_analyzer.extract_characters(CHARACTERS, text)
         metadata = {"paragraph" : paragraph,
                     "tone" : tone,
                     "characters": characters}
-        # Store metadata in a global dictionary
-        # TODO: Change this to store all paragprah data in music data structure
         MUTEX.acquire()
         ANALYZED_PARAGRAPHS.append(metadata)
         MUTEX.release()
     else:
         sys.stderr.write("Something went wrong!\n")
+
 
 
 # open_book
@@ -40,7 +38,7 @@ def open_book(name):
         global CHARACTERS
         CHARACTERS = []
         for line in file:
-            CHARACTERS.append(line.strip("\n"))
+            CHARACTERS.append(line.partition(":")[0])
         file.close()
     except IOError:
         sys.stderr.write("Error: Characters.txt does not exist.\n")
