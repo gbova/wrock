@@ -38,8 +38,8 @@ def open_book(name):
         global CHARACTERS
         CHARACTERS = []
         for line in file:
-            CHARACTERS.append(line.strip("\n"))
-        file.close()
+            CHARACTERS.append(line.partition(":")[0])
+g        file.close()
     except IOError:
         sys.stderr.write("Error: Characters.txt does not exist.\n")
         exit(1)
