@@ -65,7 +65,7 @@ def playTone():
     for aTuple in PTable:
         tone = aTuple[0]
         newplayer.queue(musicDict[tone])
-        newplayer.queue(shortsilence)
+        #newplayer.queue(shortsilence)
     playerLock.acquire()
     players.append(newplayer)
     playerLock.release()
