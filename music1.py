@@ -24,14 +24,14 @@ allDone = threading.Lock()
 PTable = []
 
 chars1 = ["Harry", "Ron", "Hermione", "Malfoy"]
-chars2 = ["Voldemort", "Hagrid", "Dumbledoor", "Dursley"]
+chars2 = ["Voldemort", "Hagrid", "Dumbledore", "Dursley"]
 allChars = chars1 + chars2
 tones = ["joy", "exciting", "tentative", "neutral"]
 
 #music files
 hp1 = pyglet.media.load('hp_music/harry_potter.wav', streaming=False)
 hp2 = pyglet.media.load('hp_music/harry_potter-2.wav', streaming=False)
-hogwarts = pyglet.media.load('hp_music/happy_hogwarts.wav', streaming=False)
+hogwarts = pyglet.media.load('hp_music/hogwarts_christmas.wav', streaming=False)
 christmas = pyglet.media.load('hp_music/hogwarts_christmas.wav', streaming=False)
 laugh = pyglet.media.load('hp_music/voldemort_laugh.wav', streaming=False)
 
@@ -97,6 +97,10 @@ def fillTable():
     for i in range (0, 8):
         PTable.append ((tones[i%4], [chars1[i%4], chars2[i%4]]))
 
+def exit_callback(dt):
+    pyglet.app.exit()
+
+
 def main(argv):
     fillTable()
     print(PTable)
@@ -114,6 +118,7 @@ def main(argv):
         t.join()
 
     player.play()
+    pyglet.clock.schedule_once(exit_callback, 30)
     pyglet.app.run()
 
 
