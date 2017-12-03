@@ -1,0 +1,5 @@
+Analytical: strings/1st_String_E_64kb.wav
+Neutral: strings/1st_String_E_64kb.wav
+Tentative: strings/1st_String_E_64kb.wav
+Joy: strings/1st_String_E_64kb.wav
+Sadness: strings/1st_String_E_64kb.wav

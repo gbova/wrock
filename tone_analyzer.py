@@ -45,8 +45,10 @@ def extract_tone(data):
 # This method makes a call to IBM Watson's tone analyzer, with my credentials,
 # and returns the results
 def analyze_tone(text):
-    usr = "4fefa032-6a54-42c1-b941-052dc4b1f30c"
-    pwd = "vCiQRlTwiYSr"
+    # usr = "4fefa032-6a54-42c1-b941-052dc4b1f30c"
+    # pwd = "vCiQRlTwiYSr"
+    usr = "b7d346d9-6fa6-41c8-81fa-164455045633"
+    pwd = "JSYk5elXU1Yn"
     headers = {"content-type": "text/plain"}
     data = text
     try:

@@ -1,3 +1,4 @@
+import musicGenerator
 import tone_analyzer
 import threading
 import sys
@@ -13,7 +14,6 @@ def analyze(text, paragraph):
 
     tone = tone_analyzer.analyze_tone(text)
     if tone != False:
-        print(tone)
         characters = tone_analyzer.extract_characters(CHARACTERS, text)
         metadata = {"paragraph" : paragraph,
                     "tone" : tone,
@@ -41,7 +41,16 @@ def open_book(name):
             CHARACTERS.append(line.partition(":")[0])
         file.close()
     except IOError:
-        sys.stderr.write("Error: Characters.txt does not exist.\n")
+        sys.stderr.write("Error: characters.txt does not exist.\n")
+        exit(1)
+
+    # There must be a file named "tones.txt" in the directory
+    # If not, give the user an error message and exit
+    try:
+        file = open("tones.txt", "r")
+        file.close()
+    except IOError:
+        sys.stderr.write("Error: tones.txt does not exist.\n")
         exit(1)
 
     # Open the text file with the story in it and return the pointer
@@ -72,6 +81,13 @@ def start():
     # Join every thread; they stop running when all the text is analyzed
     for t in threads:
         t.join()
+
+    # Compile data for music generation
+    music_gen = musicGenerator.musicGenerator(
+            {"tone": "analytical"},
+            100,
+            "characters.txt",
+            "tones.txt")
 
 
 if __name__ == "__main__":

@@ -8,23 +8,25 @@ import pyglet
 from pyglet import media
 
 longsilence = pyglet.media.load('hp_music/silence_10.wav', streaming=False)
+shortsilence = pyglet.media.load('hp_music/silence_10.wav', streaming=False)
+
 
 class musicGenerator:
     def __init__(self, data, maxTime, charFile, toneFile):
         self.PTable = data
-        self.numChars = numChars
-        self.charDict = self.unpackFile (charFile)
-        self.toneDict = self.unpackFile (toneFile)
+        self.charDict = self.unpackFile(charFile)
+        self.toneDict = self.unpackFile(toneFile)
         self.players = []
-        self.playerLock = Threading.Lock()
+        self.playerLock = threading.Lock()
         self.maxTime = maxTime
 
-    def unpackFile (fname):
+    def unpackFile (self, fname):
         newDict = {}
         with open(fname,'r') as f:
             for line in f:
-                words = line.split()
-                newDict[words[0]] = pyglet.media.load(words[1], streaming=False)
+                words = line.partition(": ")
+                music = words[2].strip('\n')
+                newDict[words[0]] = pyglet.media.load(str(music), streaming=False)
         return newDict
 
     def start(self):
@@ -51,7 +53,7 @@ class musicGenerator:
         for par in self.PTable:
             tone = par[0]
             newplayer.queue(self.toneDict[tone])
-            #newplayer.queue(shortsilence)
+            newplayer.queue(shortsilence)
         self.playerLock.acquire()
         self.players.append(newplayer)
         self.playerLock.release()
@@ -67,7 +69,7 @@ class musicGenerator:
                     newplayer.queue(self.charDict[aName])
             if not nameFound:
                 newplayer.queue(longsilence)
-            #newplayer.queue(shortsilence)
+            newplayer.queue(shortsilence)
         self.playerLock.acquire()
         self.players.append(newplayer)
         self.playerLock.release()
