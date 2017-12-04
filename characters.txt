@@ -1,7 +1,7 @@
-Mr. Dursley: objects/dursley.wav 
-Mrs. Dursley: objects/dursley.wav
-The Dursleys: objects/dursley.wav
-Dudley: objects/dursley.wav
+Mr. Dursley: objects/Dursley.wav 
+Mrs. Dursley: objects/Dursley.wav
+The Dursleys: objects/Dursley.wav
+Dudley: objects/Dursley.wav
 broom: objects/broom.wav
 dementor/death eater: objects/dementor.wav
 dobby: objects/dobby.wav
