@@ -18,7 +18,7 @@ def analyze(text, paragraph):
         metadata = {"tone" : tone,
                    "characters" : characters}
         MUTEX.acquire()
-c        ANALYZED_PARAGRAPHS[paragraph] = metadata
+        ANALYZED_PARAGRAPHS[paragraph] = metadata
         MUTEX.release()
     else:
         sys.stderr.write("Something went wrong!\n")
