@@ -14,7 +14,7 @@ shortsilence = pyglet.media.load('hp_music/silence_1.wav', streaming=False)
 class musicGenerator:
     def __init__(self, data, maxTime, charFile, toneFile):
         self.PTable = data
-        self.tableLen = len(PTable)
+        self.tableLen = len(self.PTable)
         self.charDict = self.unpackFile(charFile)
         self.toneDict = self.unpackFile(toneFile)
         self.players = []
