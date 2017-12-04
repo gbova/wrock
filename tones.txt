@@ -1,4 +1,4 @@
-Analytical: objects/analytical.wav
+Analytical: objects/neutral.wav
 Confident: objects/confident.wav
 Neutral: objects/neutral.wav
 Tentative: objects/tentative.wav
