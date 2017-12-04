@@ -1,5 +1,8 @@
-Analytical: strings/1st_String_E_64kb.wav
-Neutral: strings/1st_String_E_64kb.wav
-Tentative: strings/1st_String_E_64kb.wav
-Joy: strings/1st_String_E_64kb.wav
-Sadness: strings/1st_String_E_64kb.wav
+Analytical: objects/analytical.wav
+Confident: objects/confident.wav
+Neutral: objects/neutral.wav
+Tentative: objects/tentative.wav
+Joy: objects/joy.wav
+Sadness: objects/sadness.wav
+Fear: objects/fear.wav
+Anger: objects/anger.wav
