@@ -15,11 +15,10 @@ def analyze(text, paragraph):
     tone = tone_analyzer.analyze_tone(text)
     if tone != False:
         characters = tone_analyzer.extract_characters(CHARACTERS, text)
-        metadata = {"paragraph" : paragraph,
-                    "tone" : tone,
-                    "characters": characters}
+        metadata = {"tone" : tone,
+                   "characters" : characters}
         MUTEX.acquire()
-        ANALYZED_PARAGRAPHS.append(metadata)
+c        ANALYZED_PARAGRAPHS[paragraph] = metadata
         MUTEX.release()
     else:
         sys.stderr.write("Something went wrong!\n")
@@ -96,7 +95,7 @@ if __name__ == "__main__":
         exit(1)
 
     global ANALYZED_PARAGRAPHS
-    ANALYZED_PARAGRAPHS = []
+    ANALYZED_PARAGRAPHS = {}
     global MUTEX
     MUTEX = threading.Semaphore()
 
