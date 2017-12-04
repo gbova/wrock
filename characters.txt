@@ -1,4 +1,14 @@
-Mr. Dursley: hp_music/harry_potter.wav
-Mrs. Dursley: hp_music/harry_potter.wav
-The Dursleys: hp_music/harry_potter.wav
-Dudley: hp_music/harry_potter.wav
+Mr. Dursley: objects/Dursley.wav 
+Mrs. Dursley: objects/Dursley.wav
+The Dursleys: objects/Dursley.wav
+Dudley: objects/Dursley.wav
+broom: objects/broom.wav
+dementor/death eater: objects/dementor.wav
+dobby: objects/dobby.wav
+hogwarts: objects/hogwarts.wav
+invisibility cloak: objects/invisibility_cloak.wav
+Lupin: objects/lupin.wav
+owl/Hedwig: objects/owl.wav
+snitch: objects/snitch.wav
+train/hogwarts express: objects/train.wav
+voldemort: objects/voldemort.wav
