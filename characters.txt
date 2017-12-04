@@ -15,6 +15,7 @@ Dobby: objects/dobby.wav
 Hogwarts: objects/hogwarts.wav
 invisibility cloak: objects/invisibility_cloak.wav
 Lupin: objects/lupin.wav
+werewolf: objects/lupin.wav
 owl: objects/owl.wav
 Hedwig: objects/owl.wav
 Snitch: objects/snitch.wav
