@@ -23,7 +23,7 @@ train: objects/train.wav
 Hogwarts Express: objects/train.wav
 Voldemort: objects/voldemort.wav
 Hermione: objects/hermione.wav
-Dumbledore: objects/dumbledore.wav
+Dumbledore: objects/invisibility_cloak.wav
 McGonagall: objects/mcgonagall.wav
 Minerva: objects/mcgonagall.wav
 cat: objects/mcgonagall.wav
@@ -36,3 +36,4 @@ spell: objects/wand.wav
 wand: objects/wand.wav
 Wingardium: objects/wand.wav
 Stupefy: objects/wand.wav
+Expelliarmus: objects/wand.wav
