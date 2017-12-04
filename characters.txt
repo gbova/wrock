@@ -3,12 +3,15 @@ Mrs. Dursley: objects/Dursley.wav
 The Dursleys: objects/Dursley.wav
 Dudley: objects/Dursley.wav
 broom: objects/broom.wav
-dementor/death eater: objects/dementor.wav
-dobby: objects/dobby.wav
-hogwarts: objects/hogwarts.wav
+dementor: objects/dementor.wav
+death eater: objects/dementor.wav
+Dobby: objects/dobby.wav
+Hogwarts: objects/hogwarts.wav
 invisibility cloak: objects/invisibility_cloak.wav
 Lupin: objects/lupin.wav
-owl/Hedwig: objects/owl.wav
+owl: objects/owl.wav
+Hedwig: objects/owl.wav
 snitch: objects/snitch.wav
-train/hogwarts express: objects/train.wav
-voldemort: objects/voldemort.wav
+train: objects/train.wav
+Hogwarts Express: objects/train.wav
+Voldemort: objects/voldemort.wav
