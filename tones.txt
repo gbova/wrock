@@ -1,5 +1,5 @@
 Analytical: objects/neutral.wav
-Confident: objects/confident.wav
+Confident: objects/neutral.wav
 Neutral: objects/neutral.wav
 Tentative: objects/tentative.wav
 Joy: objects/joy.wav
