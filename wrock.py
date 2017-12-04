@@ -81,13 +81,16 @@ def start():
     for t in threads:
         t.join()
 
+    print("about to play music")
+
     # Compile data for music generation
     music_gen = musicGenerator.musicGenerator(
-            {"tone": "analytical"},
+            ANALYZED_PARAGRAPHS,
             100,
             "characters.txt",
             "tones.txt")
 
+    music_gen.start()
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:

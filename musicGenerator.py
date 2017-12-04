@@ -40,13 +40,14 @@ class musicGenerator:
     def start(self):
         """Start tone and character threads to read music data and queue music
         to play in an order, then play all resulting queues simultaneously"""
+        print(self.tableLen)
         threads = []
         # set up tone thread
         toneThread = Thread(target=self.playTone)
         threads.append(toneThread)
         # set up character threads
         for charName in self.charDict:
-            newThread = Thread(target=playChar, args=(charName,))
+            newThread = Thread(target=self.playChar, args=(charName,))
             threads.append(newThread)
         for t in threads:
             t.start()
@@ -66,7 +67,6 @@ class musicGenerator:
     def playTone(self):
         """ For each paragraph in the table, queue appropriate music for the
         tone to a pyglet player"""
-        player
         newplayer = pyglet.media.Player()
         # loop through every paragraph in the table, in order
         for p in range (1, self.tableLen + 1):
