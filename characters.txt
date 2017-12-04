@@ -1,3 +1,6 @@
+Hagrid: objects/hagrid.wav
+McGonagall: objects/mcgonagall.wav
+Snape: objects/snape.wav
 Mr. Dursley: objects/Dursley.wav
 Mrs. Dursley: objects/Dursley.wav
 The Dursleys: objects/Dursley.wav
@@ -14,7 +17,7 @@ invisibility cloak: objects/invisibility_cloak.wav
 Lupin: objects/lupin.wav
 owl: objects/owl.wav
 Hedwig: objects/owl.wav
-snitch: objects/snitch.wav
+Snitch: objects/snitch.wav
 train: objects/train.wav
 Hogwarts Express: objects/train.wav
 Voldemort: objects/voldemort.wav
