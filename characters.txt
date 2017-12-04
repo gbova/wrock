@@ -3,6 +3,9 @@ Mrs. Dursley: objects/Dursley.wav
 The Dursleys: objects/Dursley.wav
 Dudley: objects/Dursley.wav
 broom: objects/broom.wav
+fly: objects/broom.wav
+flying: objects/broom.wav
+Quidditch: objects/broom.wav
 dementor: objects/dementor.wav
 death eater: objects/dementor.wav
 Dobby: objects/dobby.wav
@@ -15,3 +18,17 @@ snitch: objects/snitch.wav
 train: objects/train.wav
 Hogwarts Express: objects/train.wav
 Voldemort: objects/voldemort.wav
+Hermione: objects/hermione.wav
+Dumbledore: objects/dumbledore.wav
+McGonagall: objects/mcgonagall.wav
+Minerva: objects/mcgonagall.wav
+cat: objects/mcgonagall.wav
+Snape: objects/snape.wav
+Malfoy: objects/malfoy.wav
+Expecto: objects/patronum.wav
+Patronum: objects/patronum.wav
+Patronus: objects/patronum.wav
+spell: objects/wand.wav
+wand: objects/wand.wav
+Wingardium: objects/wand.wav
+Stupefy: objects/wand.wav
