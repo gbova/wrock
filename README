@@ -1,5 +1,53 @@
 Wrock
-
 Marilyn Sun, Julia Cooper, and Gabriella Bova
-
+12.6.2017
 COMP50: Concurrent Programming
+
+===============================================================================
+Directories and Files
+===============================================================================
+wrock.py
+    This is the main module that coordinates the entire program. It opens the 
+story file and ensures there is a character file in the current directory. It 
+collects data about the story’s tone and characters, and stores that 
+information in PTable, so the soundtrack can be created.
+
+tone_alayzer.py
+    This module wraps the Watson API so that the main module can call this set 
+of functions, instead of interacting with the API directly.
+
+musicGenerator.py
+    This module is initialized with a PTable filled with information acquired 
+from tone analyzing. The module coordinates threads and pyglet music players to 
+play music based off of the tones and characters that appear in the table.
+
+text_to_analyze.txt: 
+    This text file contains text to be analyzed and should have each paragraph 
+on its own line. (In other words, there should be a new line character only at 
+the start of a new paragraph).
+
+characters.txt: 
+    Lists the characters in the story that will have a riff during the piece, 
+and the corresponding .wav file for this riff.
+
+tones.txt: 
+    Lists the tones that will be encountered during the story, and the 
+corresponding .wav file to play for that tone. The possible tones are: 
+analytical, confident, neutral, tentative, joy, sadness, fear, anger.
+
+Objects: 
+    Contains default uncompressed .wav music samples used in demos
+
+harrypotter2.txt, werewolf.txt:
+    Sample texts to analyze
+===============================================================================
+Instructions on Running the Code
+===============================================================================
+To run the program, type the following command into your terminal, 
+in the wrock directory:
+
+>  python wrock.py text_to_analyze.txt
+
+To customize music: Users can add more music samples to Wrock by downloading 
+uncompressed wav files, and entering the new character/object and the file 
+path of the music sample in characters.txt.
