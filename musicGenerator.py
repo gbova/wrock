@@ -8,8 +8,8 @@ from threading import Thread
 import pyglet
 from pyglet import media
 
-longsilence = pyglet.media.load('hp_music/silence_10.wav', streaming=False)
-shortsilence = pyglet.media.load('hp_music/silence_1.wav', streaming=False)
+longsilence = pyglet.media.load('objects/silence_10.wav', streaming=False)
+shortsilence = pyglet.media.load('objects/silence_1.wav', streaming=False)
 
 
 class musicGenerator:
