@@ -81,8 +81,6 @@ def start():
     for t in threads:
         t.join()
 
-    print("about to play music")
-
     # Compile data for music generation
     music_gen = musicGenerator.musicGenerator(
             ANALYZED_PARAGRAPHS,

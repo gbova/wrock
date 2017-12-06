@@ -40,7 +40,6 @@ class musicGenerator:
     def start(self):
         """Start tone and character threads to read music data and queue music
         to play in an order, then play all resulting queues simultaneously"""
-        print(self.tableLen)
         threads = []
         # set up tone thread
         toneThread = Thread(target=self.playTone)
@@ -60,7 +59,7 @@ class musicGenerator:
         pyglet.clock.schedule_once(self.exit_callback, self.maxTime)
         pyglet.app.run()
 
-    def exit_callback(dt):
+    def exit_callback(self, dt):
         """ Exit the pyglet app """
         pyglet.app.exit()
 
