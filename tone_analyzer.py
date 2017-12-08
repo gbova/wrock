@@ -1,14 +1,17 @@
+# tone_analyzer.py
+# contains functions to analyze the tone of a paragraph and extract
+#   a list of appearing characters or objects
+
 import requests
 import json
 
 WATSON = "https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version\
 =2017-09-21"
 
-
-# extract_tone
-# Parameters: The data returned from IBM Watson's Tone Analyzer
-# This method extracts the overall tone of the text analyzed by IBM Watson
 def extract_tone(data):
+    """extract_tone:
+    Parameters: The data returned from IBM Watson's Tone Analyzer
+    This method extracts the overall tone of the text analyzed by IBM Watson"""
     data = json.loads(data.encode("utf-8"))
 
     # Return None if there is an error in the data
@@ -29,16 +32,18 @@ def extract_tone(data):
     return overall_tone
 
 
-# analyze_tone
-# Parameters: The text to be analyzed
-# This method makes a call to IBM Watson's tone analyzer, with my credentials,
-# and returns the results
 def analyze_tone(text):
+    """analyze_tone:
+    Parameters: The text to be analyzed
+    This method makes a call to IBM Watson's tone analyzer, with my credentials,
+    and returns the results"""
+
     usr = "b7d346d9-6fa6-41c8-81fa-164455045633"
     pwd = "JSYk5elXU1Yn"
     headers = {"content-type": "text/plain"}
     data = text
     try:
+        # make request
         r = requests.post(WATSON, auth=(usr,pwd), headers=headers, data=data)
         tone = extract_tone(r.text)
         return tone
@@ -46,10 +51,10 @@ def analyze_tone(text):
         return False
 
 
-# extract_characters
-# Parameters: A list of character names, a block of text
-# Returns: The list of characters names that appear in the given text
 def extract_characters(characters, text):
+    """extract_characters:
+    Parameters: A list of character names, a block of text
+    Returns: The list of characters names that appear in the given text"""
     character_list = []
     for character in characters:
         if character in text:

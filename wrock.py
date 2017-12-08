@@ -1,19 +1,25 @@
+# wrock.py
+# Main module that runs the program. Coordinates the tone analyzer and
+#   music generator to play a soundtrack for a given passage based on its
+#   changing sentimental tone and occuring characters/objects
+
 import musicGenerator
 import tone_analyzer
 import threading
 import sys
 
-
-# analyze
-# Parameters: Text to be analyzed and the paragraph number it was in
-# TODO: Store results of this method in a data structure for music creation
 def analyze(text, paragraph):
+    """ analyze:
+    Parameters: Text to be analyzed and the paragraph number it was in.
+    Stores results of this method in a data structure for music creation """
     global MUTEX
     global CHARACTERS
     global ANALYZED_PARAGRAPHS
 
+    # analyze tone for this paragraph
     tone = tone_analyzer.analyze_tone(text)
     if tone != False:
+        # extract characters that appear in paragraph, and add data to table
         characters = tone_analyzer.extract_characters(CHARACTERS, text)
         metadata = {"tone" : tone,
                    "characters" : characters}
@@ -24,12 +30,12 @@ def analyze(text, paragraph):
         sys.stderr.write("Something went wrong!\n")
 
 
-
-# open_book
-# Parameters: The name of the file to open
-# This method opens the file "characters.txt" and stores all character names
-# and then opens the story file by the given name and returns the file pointer
 def open_book(name):
+    """ open_book:
+    Parameters: The name of the file to open
+    This method opens the file "characters.txt" and stores all character names
+    and then opens the story file by the given name and returns its file pointer
+    """
     # There must be a file named "characters.txt" in the directory
     # If not, give the user an error message and exit
     try:
@@ -62,10 +68,9 @@ def open_book(name):
         exit(1)
 
 
-# start
-# This method starts the text analysis by opening the book and analyzing every line
-# When the method returns, you know the story has been analyzed in full
 def start():
+    """Starts the text analysis by opening the book and analyzing every line.
+    When the method returns, the story has been analyzed in full"""
     title = sys.argv[1]
     book = open_book(title)
     threads = []
